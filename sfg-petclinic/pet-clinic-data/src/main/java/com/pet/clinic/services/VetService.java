@@ -1,5 +1,11 @@
 package com.pet.clinic.services;
 
-public interface VetService {
+import com.pet.clinic.model.Vet;
 
+public interface VetService {
+	Vet findById(Long id);
+
+	Vet save(Vet pet);
+
+	Vet findAll();
 }
