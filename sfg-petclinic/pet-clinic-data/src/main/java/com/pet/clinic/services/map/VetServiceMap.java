@@ -5,12 +5,13 @@ import java.util.Set;
 import com.pet.clinic.model.Pet;
 import com.pet.clinic.model.Vet;
 import com.pet.clinic.services.CrudService;
+import com.pet.clinic.services.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 	@Override
-	public Vet save(Long id, Vet obj) {
+	public Vet save(Vet obj) {
 		// TODO Auto-generated method stub
-		return super.save(id, obj);
+		return super.save(obj.getId(), obj);
 	}
 
 	@Override

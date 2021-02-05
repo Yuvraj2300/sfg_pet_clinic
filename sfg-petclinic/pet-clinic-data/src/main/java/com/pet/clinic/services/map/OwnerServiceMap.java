@@ -3,14 +3,14 @@ package com.pet.clinic.services.map;
 import java.util.Set;
 
 import com.pet.clinic.model.Owner;
-import com.pet.clinic.services.CrudService;
+import com.pet.clinic.services.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
-	public Owner save(Long id, Owner obj) {
+	public Owner save(Owner obj) {
 		// TODO Auto-generated method stub
-		return super.save(id, obj);
+		return super.save(obj.getId(), obj);
 	}
 
 	@Override
@@ -37,4 +37,9 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 		super.findById(id);
 	}
 
+	@Override
+	public Owner findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

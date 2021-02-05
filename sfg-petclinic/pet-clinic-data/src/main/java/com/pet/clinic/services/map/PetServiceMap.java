@@ -8,9 +8,9 @@ import com.pet.clinic.services.CrudService;
 
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
 	@Override
-	public Pet save(Long id, Pet obj) {
+	public Pet save(Pet obj) {
 		// TODO Auto-generated method stub
-		return super.save(id, obj);
+		return super.save(obj.getId(), obj);
 	}
 
 	@Override
