@@ -1,14 +1,13 @@
 package org.pet.clinic.bootstrap;
 
+import org.pet.clinic.model.Owner;
+import org.pet.clinic.model.Vet;
+import org.pet.clinic.services.OwnerService;
+import org.pet.clinic.services.VetService;
+import org.pet.clinic.services.map.OwnerServiceMap;
+import org.pet.clinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import com.pet.clinic.model.Owner;
-import com.pet.clinic.model.Vet;
-import com.pet.clinic.services.OwnerService;
-import com.pet.clinic.services.VetService;
-import com.pet.clinic.services.map.OwnerServiceMap;
-import com.pet.clinic.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -16,9 +15,10 @@ public class DataLoader implements CommandLineRunner {
 	private final OwnerService ownerService;
 	private final VetService vetService;
 
-	public DataLoader() {
-		ownerService = new OwnerServiceMap();
-		vetService = new VetServiceMap();
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		super();
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 
 	@Override

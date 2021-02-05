@@ -1,33 +1,33 @@
-package com.pet.clinic.services.map;
+package org.pet.clinic.services.map;
 
 import java.util.Set;
 
-import com.pet.clinic.model.Pet;
-import com.pet.clinic.model.Vet;
-import com.pet.clinic.services.CrudService;
-import com.pet.clinic.services.VetService;
+import org.pet.clinic.model.Pet;
+import org.pet.clinic.services.CrudService;
+import org.springframework.stereotype.Service;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
 	@Override
-	public Vet save(Vet obj) {
+	public Pet save(Pet obj) {
 		// TODO Auto-generated method stub
 		return super.save(obj.getId(), obj);
 	}
 
 	@Override
-	public void delete(Vet obj) {
+	public void delete(Pet obj) {
 		// TODO Auto-generated method stub
 		super.delete(obj);
 	}
 
 	@Override
-	public Set<Vet> findAll() {
+	public Set<Pet> findAll() {
 		// TODO Auto-generated method stub
 		return super.findAll();
 	}
 
 	@Override
-	public Vet findById(Long id) {
+	public Pet findById(Long id) {
 		// TODO Auto-generated method stub
 		return super.findById(id);
 	}
