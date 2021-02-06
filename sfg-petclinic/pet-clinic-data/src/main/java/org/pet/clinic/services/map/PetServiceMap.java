@@ -6,12 +6,11 @@ import org.pet.clinic.model.Pet;
 import org.pet.clinic.services.CrudService;
 import org.springframework.stereotype.Service;
 
-
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
 	@Override
 	public Pet save(Pet obj) {
 		// TODO Auto-generated method stub
-		return super.save(obj.getId(), obj);
+		return super.save(obj);
 	}
 
 	@Override
