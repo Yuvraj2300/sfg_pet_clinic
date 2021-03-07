@@ -1,8 +1,10 @@
 package org.pet.clinic.bootstrap;
 
 import org.pet.clinic.model.Owner;
+import org.pet.clinic.model.PetType;
 import org.pet.clinic.model.Vet;
 import org.pet.clinic.services.OwnerService;
+import org.pet.clinic.services.PetTypeService;
 import org.pet.clinic.services.VetService;
 import org.pet.clinic.services.map.OwnerServiceMap;
 import org.pet.clinic.services.map.VetServiceMap;
@@ -14,15 +16,28 @@ public class DataLoader implements CommandLineRunner {
 
 	private final OwnerService ownerService;
 	private final VetService vetService;
+	private final PetTypeService petTypeService;
 
-	public DataLoader(OwnerService ownerService, VetService vetService) {
+	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
 		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
+		this.petTypeService = petTypeService;
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
+
+		PetType dog = new PetType();
+		dog.setName("Dog");
+		PetType saveDogPetType = petTypeService.save(dog);
+
+		PetType cat = new PetType();
+		dog.setName("Cat");
+		PetType saveCatPetType = petTypeService.save(cat);
+
+		System.out.println("Loaded Pet Types....");
+
 		Owner owner1 = new Owner();
 		owner1.setId(1L);
 		owner1.setFirstName("Michael");
