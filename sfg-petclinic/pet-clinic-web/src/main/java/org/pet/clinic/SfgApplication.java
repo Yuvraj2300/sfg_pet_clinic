@@ -13,8 +13,8 @@ public class SfgApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SfgApplication.class, args);
-//		ConfigurableApplicationContext ctx = SpringApplication.run(SfgApplication.class, args);
-//		Arrays.stream(ctx.getBeanDefinitionNames()).forEach(n->System.out.println(n));
+		ConfigurableApplicationContext ctx = SpringApplication.run(SfgApplication.class, args);
+		Arrays.stream(ctx.getBeanDefinitionNames()).forEach(n->System.out.println(n));
 	}
 
 }
