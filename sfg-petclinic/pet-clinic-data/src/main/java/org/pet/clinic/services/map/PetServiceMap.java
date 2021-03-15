@@ -4,10 +4,11 @@ import java.util.Set;
 
 import org.pet.clinic.model.Pet;
 import org.pet.clinic.services.CrudService;
+import org.pet.clinic.services.PetService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long>, PetService {
 	@Override
 	public Pet save(Pet obj) {
 		// TODO Auto-generated method stub
