@@ -8,8 +8,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "visits")
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Visit extends BaseEntity {
 
 	@Column(name = "date")
